@@ -12,7 +12,7 @@ libbz2-dev libxml2-dev libzip-dev libboost-all-dev \
 lua5.2 liblua5.2-dev libtbb-dev wget
 
 RUN mkdir -p /osrm
-RUN git clone git://github.com/Project-OSRM/osrm-backend.git /osrm
+RUN git clone https://github.com/Project-OSRM/osrm-backend /osrm
 RUN mkdir -p /osrm/build
 WORKDIR /osrm/build
 RUN cmake ..
