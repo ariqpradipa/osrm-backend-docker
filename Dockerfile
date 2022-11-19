@@ -1,4 +1,10 @@
-FROM ubuntu:18.04.6
+FROM ubuntu:18.04
+
+# LABEL about the custom image
+LABEL maintainer="ariq.pradipa@ui.ac.id"
+LABEL version="0.2"
+LABEL description="This is custom Docker Image for \
+OSRM Backend Services."
 
 RUN apt-get update
 RUN apt-get install -y build-essential git cmake pkg-config \
