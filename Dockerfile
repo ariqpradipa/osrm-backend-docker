@@ -12,16 +12,16 @@ WORKDIR /osrm/build
 RUN cmake ..
 RUN cmake --build .
 RUN cmake --build . --target install
-RUN ln -s /osrm/profiles/car.lua profile.lua
-RUN ln -s /osrm/profiles/lib/ lib
-#RUN echo "disk=/tmp/stxxl,15G,memory autogrow" > .stxxl
-RUN echo "disk=/tmp/stxxl,15G,syscall autogrow" > .stxxl
+# RUN ln -s /osrm/profiles/car.lua profile.lua
+# RUN ln -s /osrm/profiles/lib/ lib
+# #RUN echo "disk=/tmp/stxxl,15G,memory autogrow" > .stxxl
+# RUN echo "disk=/tmp/stxxl,15G,syscall autogrow" > .stxxl
 
-WORKDIR /osrm/build
-ADD java-latest.osm.pbf map.osm.pbf
-RUN ./osrm-extract -p profile.lua map.osm.pbf 
-RUN ./osrm-contract map.osrm
-RUN ./osrm-routed map.osrm
+# WORKDIR /osrm/build
+# ADD java-latest.osm.pbf map.osm.pbf
+# RUN ./osrm-extract -p profile.lua map.osm.pbf 
+# RUN ./osrm-contract map.osrm
+# RUN ./osrm-routed map.osrm
 
-EXPOSE 5000
-CMD ["/osrm/build/osrm-routed", "/osrm/build/map.osrm", "-p", "5000"]
+# EXPOSE 5000
+# CMD ["/osrm/build/osrm-routed", "/osrm/build/map.osrm", "-p", "5000"]
