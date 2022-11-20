@@ -1,5 +1,5 @@
 services: 
-   - type: pserv 
+   - type: web
      name: osrm-backend
      env: docker 
      autoDeploy: false
