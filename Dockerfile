@@ -7,7 +7,7 @@ RUN mkdir ./data
 RUN <<EOF
     apt-get update
     apt-get -y install curl
-    curl http://download.geofabrik.de/asia/indonesia/java-latest.osm.pbf --output "data/#1"
+    curl http://download.geofabrik.de/asia/indonesia/java-latest.osm.pbf --output "data/java-latest.osm.pbf"
 EOF
 
 # create a routable graph
