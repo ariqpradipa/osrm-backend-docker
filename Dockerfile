@@ -3,12 +3,12 @@ FROM ghcr.io/project-osrm/osrm-backend:v5.27.1
 # WORKDIR /osrm
 # RUN mkdir ./data
 
-# # Get osm data for your region of interest
-# RUN <<EOF
-#     apt-get update
-#     apt-get -y install curl
+# Get osm data for your region of interest
+RUN <<EOF
+    apt-get update
+    apt-get -y install curl
 #     curl http://download.geofabrik.de/asia/indonesia/java-latest.osm.pbf --output "data/java-latest.osm.pbf"
-# EOF
+EOF
 
 # # create a routable graph
 # RUN <<EOF
