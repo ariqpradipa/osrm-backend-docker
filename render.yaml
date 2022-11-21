@@ -3,6 +3,3 @@ services:
      name: osrm-backend
      env: docker 
      autoDeploy: false
-     envVar:
-     - key: PORT
-       value: 5000
