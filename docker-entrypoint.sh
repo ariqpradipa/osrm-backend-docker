@@ -8,12 +8,10 @@
 # OSRM_PBF_URL=${OSRM_PBF_URL:="http://download.geofabrik.de/asia/indonesia/java-latest.osm.pbf"}
 # OSRM_MAX_TABLE_SIZE=${OSRM_MAX_TABLE_SIZE:="8000"}
 
-
 _sig() {
   kill -TERM $child 2>/dev/null
 }
 trap _sig SIGKILL SIGTERM SIGHUP SIGINT EXIT
-
 
 # # Retrieve the PBF file
 # curl -L $OSRM_PBF_URL --create-dirs -o $OSRM_DATA_PATH/$OSRM_DATA_LABEL.osm.pbf
@@ -34,6 +32,6 @@ trap _sig SIGKILL SIGTERM SIGHUP SIGINT EXIT
 # osrm-contract $OSRM_DATA_PATH/$OSRM_DATA_LABEL.osrm
 
 # Start serving requests
-osrm-routed /data/java-latest.osrm --max-table-size 8000 &
+osrm-routed data/java-latest.osrm --max-table-size 8000 &
 child=$!
 wait "$child"
