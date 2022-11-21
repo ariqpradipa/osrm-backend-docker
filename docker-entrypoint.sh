@@ -19,12 +19,12 @@ trap _sig SIGKILL SIGTERM SIGHUP SIGINT EXIT
 curl -L $OSRM_PBF_URL --create-dirs -o $OSRM_DATA_PATH/$OSRM_DATA_LABEL.osm.pbf
 
 # Set the graph profile path
-OSRM_GRAPH_PROFILE_PATH="/osrm-profiles/$OSRM_GRAPH_PROFILE.lua"
+OSRM_GRAPH_PROFILE_PATH="/opt/$OSRM_GRAPH_PROFILE.lua"
 
 # If the URL to a custom profile is provided override the default profile
 if [ ! -z "$OSRM_GRAPH_PROFILE_URL" ]; then
     # Set the custom graph profile path
-    OSRM_GRAPH_PROFILE_PATH="/osrm-profiles/custom-profile.lua"
+    OSRM_GRAPH_PROFILE_PATH="/opt/custom-profile.lua"
     # Retrieve the custom graph profile
     curl -L $OSRM_GRAPH_PROFILE_URL --create-dirs -o $OSRM_GRAPH_PROFILE_PATH
 fi
