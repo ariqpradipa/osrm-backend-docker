@@ -6,7 +6,7 @@
 # OSRM_GRAPH_PROFILE=${OSRM_GRAPH_PROFILE:="car"}
 # OSRM_GRAPH_PROFILE_URL=${OSRM_GRAPH_PROFILE_URL:=""}
 # OSRM_PBF_URL=${OSRM_PBF_URL:="http://download.geofabrik.de/asia/indonesia/java-latest.osm.pbf"}
-OSRM_MAX_TABLE_SIZE=${OSRM_MAX_TABLE_SIZE:="8000"}
+# OSRM_MAX_TABLE_SIZE=${OSRM_MAX_TABLE_SIZE:="8000"}
 
 
 _sig() {
@@ -34,6 +34,6 @@ trap _sig SIGKILL SIGTERM SIGHUP SIGINT EXIT
 # osrm-contract $OSRM_DATA_PATH/$OSRM_DATA_LABEL.osrm
 
 # Start serving requests
-osrm-routed /data/java-latest.osrm --max-table-size $OSRM_MAX_TABLE_SIZE &
+osrm-routed /data/java-latest.osrm --max-table-size 8000 &
 child=$!
 wait "$child"
