@@ -14,7 +14,7 @@ RUN osrm-extract -p /opt/car.lua data/java-latest.osm.pbf
     # osrm-partition data/$REGION_VERSION.osm.pbf
     # osrm-customize data/$REGION_VERSION.osm.pbf
     # Contraction Hierarchies: Longer build time but faster API response
-RUN osrm-contract data/java-latest.osm.pbf
+RUN osrm-contract data/java-latest.osrm
 
 # Set the entrypoint
 COPY docker-entrypoint.sh /
