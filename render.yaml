@@ -1,5 +1,5 @@
 services:
   - type: web
-    name: owa
+    name: OSRM-BACKEND
     env: docker
     autoDeploy: false
